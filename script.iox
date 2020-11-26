@@ -1,0 +1,13 @@
+iox
+	handle = sqlconnectionstring("jdbc:mariadb://localhost:3306/grupoalv_master")
+	if handle > 0
+		? "Conectado Ok"
+		if sqldisconnect(handle)
+			? "Desconectado Ok"
+		else
+			? "Error en la desconexión"
+		end
+	else
+		? "Error de comunicación"
+	end
+end
